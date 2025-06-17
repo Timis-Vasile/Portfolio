@@ -3,13 +3,12 @@ import adapter from '@sveltejs/adapter-static';
 export default {
   kit: {
     adapter: adapter({
-      // Se pubblichi in una sottocartella, ad esempio /Portfolio, aggiungi:
-      // pages: 'build',
-      // assets: 'build',
-      // fallback: null
+      pages: 'docs',
+      assets: 'docs',
+      fallback: null
     }),
     paths: {
-      base: '/Portfolio' // metti il nome repo se pubblichi in repo GitHub Pages non root
+      base: '', // oppure '/NOME-REPO' se usi custom domain o github.io
     }
   }
 };
