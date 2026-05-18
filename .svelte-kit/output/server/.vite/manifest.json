@@ -125,7 +125,6 @@
     "isEntry": true,
     "imports": [
       "_environment.js",
-      "_paths.js",
       "_client.js",
       "_dev.js"
     ],
@@ -168,7 +167,7 @@
       "_dev.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.sJZ-TdCi.css"
+      "_app/immutable/assets/_page.Bzby_p3R.css"
     ]
   },
   "src/routes/materie/+page.svelte": {

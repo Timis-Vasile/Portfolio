@@ -121,8 +121,8 @@
 
     <div class="portfolio-note">
       <span class="pn-icon">📁</span>
-      <span>Gli studenti hanno progettato e realizzato un <strong>Portfolio Digitale</strong> come strumento di
-      personal branding e testimonianza del proprio percorso di crescita civile.</span>
+      <!-- <span>Gli studenti hanno progettato e realizzato un <strong>Portfolio Digitale</strong> come strumento di
+      personal branding e testimonianza del proprio percorso di crescita civile.</span> -->
     </div>
   </div>
 

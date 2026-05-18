@@ -1,9 +1,6 @@
 <script>
   import '../app.css';
   import { page } from '$app/stores';
-  import { base } from '$app/paths';
-
-  export const prerender = true;
 
   let { children } = $props();
 
@@ -15,15 +12,6 @@
     const scrollHeight = el.scrollHeight - el.clientHeight;
     scrollProgress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
   }
-
-  // Rimosso lo slash prima del nome della pagina per far lavorare correttamente {base}
-  const navItems = [
-    { href: `${base}`,            label: '🏠 Home' },
-    { href: `${base}/chisono`,   label: '👤 Chi Sono' },
-    { href: `${base}/materie`,   label: '📚 Materie' },
-    { href: `${base}/progetti`,  label: '💡 Progetti' },
-    { href: `${base}/civica`,    label: '⚖️ Ed. Civica' },
-  ];
 </script>
 
 <svelte:window onscroll={handleScroll} />
@@ -31,15 +19,13 @@
 <div class="progress-bar" style="width: {scrollProgress}%"></div>
 
 <nav class="main-nav">
-  <a href="{base}/" class="nav-logo">Portfolio Maturità</a>
+  <a href="/Portfolio/" class="nav-logo">Portfolio Maturità</a>
   <ul class="nav-links">
-    {#each navItems as item}
-      <li>
-        <a href={item.href} class:active={$page.url.pathname === item.href || $page.url.pathname === item.href + '/'}>
-          {item.label}
-        </a>
-      </li>
-    {/each}
+    <li><a href="/Portfolio/" class:active={$page.url.pathname === '/Portfolio/' || $page.url.pathname === '/Portfolio'}>🏠 Home</a></li>
+    <li><a href="/Portfolio/chisono" class:active={$page.url.pathname === '/Portfolio/chisono'}>👤 Chi Sono</a></li>
+    <li><a href="/Portfolio/materie" class:active={$page.url.pathname === '/Portfolio/materie'}>📚 Materie</a></li>
+    <li><a href="/Portfolio/progetti" class:active={$page.url.pathname === '/Portfolio/progetti'}>💡 Progetti</a></li>
+    <li><a href="/Portfolio/civica" class:active={$page.url.pathname === '/Portfolio/civica'}>⚖️ Ed. Civica</a></li>
   </ul>
 </nav>
 

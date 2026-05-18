@@ -1,7 +1,6 @@
-import { m as base } from "../../chunks/environment.js";
-import { H as escape_html, V as attr, d as unsubscribe_stores, i as bind_props, l as store_get, n as attr_class, o as ensure_array_like, r as attr_style, tt as getContext, u as stringify } from "../../chunks/dev.js";
+import "../../chunks/environment.js";
+import { d as unsubscribe_stores, l as store_get, n as attr_class, r as attr_style, tt as getContext, u as stringify } from "../../chunks/dev.js";
 import "../../chunks/client.js";
-import "../../chunks/paths.js";
 //#region node_modules/@sveltejs/kit/src/runtime/app/stores.js
 /**
 * A function that returns all of the contextual stores. On the server, this must be called during component initialization.
@@ -36,42 +35,11 @@ var page = { subscribe(fn) {
 function _layout($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
 		var $$store_subs;
-		const prerender = true;
 		let { children } = $$props;
-		let scrollProgress = 0;
-		const navItems = [
-			{
-				href: `${base}`,
-				label: "🏠 Home"
-			},
-			{
-				href: `${base}/chisono`,
-				label: "👤 Chi Sono"
-			},
-			{
-				href: `${base}/materie`,
-				label: "📚 Materie"
-			},
-			{
-				href: `${base}/progetti`,
-				label: "💡 Progetti"
-			},
-			{
-				href: `${base}/civica`,
-				label: "⚖️ Ed. Civica"
-			}
-		];
-		$$renderer.push(`<div class="progress-bar"${attr_style(`width: ${stringify(scrollProgress)}%`)}></div> <nav class="main-nav"><a${attr("href", `${stringify(base)}/`)} class="nav-logo">Portfolio Maturità</a> <ul class="nav-links"><!--[-->`);
-		const each_array = ensure_array_like(navItems);
-		for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
-			let item = each_array[$$index];
-			$$renderer.push(`<li><a${attr("href", item.href)}${attr_class("", void 0, { "active": store_get($$store_subs ??= {}, "$page", page).url.pathname === item.href || store_get($$store_subs ??= {}, "$page", page).url.pathname === item.href + "/" })}>${escape_html(item.label)}</a></li>`);
-		}
-		$$renderer.push(`<!--]--></ul></nav> <main class="page-wrapper">`);
+		$$renderer.push(`<div class="progress-bar"${attr_style(`width: ${stringify(0)}%`)}></div> <nav class="main-nav"><a href="/Portfolio/" class="nav-logo">Portfolio Maturità</a> <ul class="nav-links"><li><a href="/Portfolio/"${attr_class("", void 0, { "active": store_get($$store_subs ??= {}, "$page", page).url.pathname === "/Portfolio/" || store_get($$store_subs ??= {}, "$page", page).url.pathname === "/Portfolio" })}>🏠 Home</a></li> <li><a href="/Portfolio/chisono"${attr_class("", void 0, { "active": store_get($$store_subs ??= {}, "$page", page).url.pathname === "/Portfolio/chisono" })}>👤 Chi Sono</a></li> <li><a href="/Portfolio/materie"${attr_class("", void 0, { "active": store_get($$store_subs ??= {}, "$page", page).url.pathname === "/Portfolio/materie" })}>📚 Materie</a></li> <li><a href="/Portfolio/progetti"${attr_class("", void 0, { "active": store_get($$store_subs ??= {}, "$page", page).url.pathname === "/Portfolio/progetti" })}>💡 Progetti</a></li> <li><a href="/Portfolio/civica"${attr_class("", void 0, { "active": store_get($$store_subs ??= {}, "$page", page).url.pathname === "/Portfolio/civica" })}>⚖️ Ed. Civica</a></li></ul></nav> <main class="page-wrapper">`);
 		children($$renderer);
 		$$renderer.push(`<!----></main> <footer class="main-footer">Portfolio Digitale · Esame di Stato 2025/2026 ·</footer>`);
 		if ($$store_subs) unsubscribe_stores($$store_subs);
-		bind_props($$props, { prerender });
 	});
 }
 //#endregion
