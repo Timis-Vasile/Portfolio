@@ -19,13 +19,13 @@
 <div class="progress-bar" style="width: {scrollProgress}%"></div>
 
 <nav class="main-nav">
-  <a href="/Portfolio/" class="nav-logo">Portfolio Maturità</a>
+  <a href="/Portfolio/" class="nav-logo" data-sveltekit-reload>Portfolio Maturità</a>
   <ul class="nav-links">
-    <li><a href="/Portfolio/" class:active={$page.url.pathname === '/Portfolio/' || $page.url.pathname === '/Portfolio'}>🏠 Home</a></li>
-    <li><a href="/Portfolio/chisono" class:active={$page.url.pathname === '/Portfolio/chisono'}>👤 Chi Sono</a></li>
-    <li><a href="/Portfolio/materie" class:active={$page.url.pathname === '/Portfolio/materie'}>📚 Materie</a></li>
-    <li><a href="/Portfolio/progetti" class:active={$page.url.pathname === '/Portfolio/progetti'}>💡 Progetti</a></li>
-    <li><a href="/Portfolio/civica" class:active={$page.url.pathname === '/Portfolio/civica'}>⚖️ Ed. Civica</a></li>
+    <li><a href="/Portfolio/" data-sveltekit-reload class:active={$page.url.pathname === '/Portfolio/' || $page.url.pathname === '/Portfolio'}>🏠 Home</a></li>
+    <li><a href="/Portfolio/chisono" data-sveltekit-reload class:active={$page.url.pathname === '/Portfolio/chisono'}>👤 Chi Sono</a></li>
+    <li><a href="/Portfolio/materie" data-sveltekit-reload class:active={$page.url.pathname === '/Portfolio/materie'}>📚 Materie</a></li>
+    <li><a href="/Portfolio/progetti" data-sveltekit-reload class:active={$page.url.pathname === '/Portfolio/progetti'}>💡 Progetti</a></li>
+    <li><a href="/Portfolio/civica" data-sveltekit-reload class:active={$page.url.pathname === '/Portfolio/civica'}>⚖️ Ed. Civica</a></li>
   </ul>
 </nav>
 
