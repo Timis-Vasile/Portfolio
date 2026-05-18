@@ -125,7 +125,6 @@
     "isEntry": true,
     "imports": [
       "_environment.js",
-      "_paths.js",
       "_client.js",
       "_dev.js"
     ],
